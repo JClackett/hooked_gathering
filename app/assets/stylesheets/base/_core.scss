@@ -1,0 +1,54 @@
+/* --------------------------------------------------
+General Styling
+-------------------------------------------------- */
+html {
+    	height: 100%;
+}
+
+body {
+	margin: 0;
+	background-color: $white;
+	height: 100%;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box !important; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box !important;    /* Firefox, other Gecko */
+	box-sizing: border-box !important;         /* Opera/IE 8+ */
+	&:focus { outline: none; }
+}
+
+.left { float: left !important; }
+.right { float: right !important; }
+.hidden { display: none; }
+
+.content-wrapper {
+	@extend .group;
+	width: 100%;
+	padding: 0px 30px;
+
+	@include breakpoint(large) {
+		width: 1080px;
+		margin: 0 auto;
+		padding: 0;
+	}
+}  
+
+.group-wrap {
+	@extend .group;
+}
+
+/*---------------------------------------------------
+Hacks
+---------------------------------------------------*/
+.group:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.clear { clear: both; }

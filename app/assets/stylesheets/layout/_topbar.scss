@@ -1,0 +1,74 @@
+/* --------------------------------------------------
+   Topbar
+-------------------------------------------------- */
+@include bem-block(topbar) {
+	width: 100%;
+	background: $black;
+	z-index: 5;
+	font-family: 'Permanent Marker', cursive;
+	position: fixed;
+	top: 0;
+	text-align: center;
+	height: 60px;
+	color:$white;
+	@extend .group;
+	
+	@include bem-element(menu) {
+		float: right;
+		padding: 10px 20px;
+		display:block;
+		@include font-size(30);
+		line-height: 40px;
+		cursor: pointer;
+		
+		@include breakpoint(small-medium) {
+			display:none;
+		}
+	}
+}
+
+
+@include bem-block(nav) {
+	text-align:center;
+	display:none;
+	float: none;
+	margin-right: 0;
+
+	@include breakpoint(small-medium) {
+		display:block !important;
+	}
+
+	@include bem-element(listItem) {
+		display: inline-block;
+		background-color: $white;
+		width: 100%;
+		line-height: 45px;	
+		
+		@include breakpoint(small-medium) {
+			width: auto;
+			line-height: 59px;
+			background-color: transparent;
+		}
+		
+		@include bem-element(link) {
+			color:$black;
+			margin: 0 10px;
+			padding:0px 10px;
+			cursor:pointer;
+			position: relative;
+			font-weight: 400;
+			@include font-size(25);
+			letter-spacing: 1px;
+			
+			@include breakpoint(small-medium) {
+				color:$white;
+			}
+			
+		}
+		
+		@include bem-element(link, $pseudo-class: hover) {
+			color:$yellow1;
+		}
+		
+	}
+}

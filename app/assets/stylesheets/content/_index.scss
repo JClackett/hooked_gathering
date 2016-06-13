@@ -1,0 +1,499 @@
+/* --------------------------------------------------
+Content
+-------------------------------------------------- */
+.content {
+	background-color: $white;
+}
+
+/* --------------------------------------------------
+   Sections
+-------------------------------------------------- */
+
+@include bem-block(section) {
+	background-color: $white;
+	padding: 60px 0;
+	text-align: center;
+	@extend .group;
+    
+	@include bem-element(header) {
+		text-align: center;
+		color: $green;
+		@include font-size(30);
+		font-weight:800;
+	}
+
+	@include bem-element(header, black) {
+		color:$grey2;
+	}
+
+	@include bem-element(header, white) {
+		color:$white;
+	}
+
+	@include bem-element(header, grey) {
+		color:$grey6;
+	}
+
+	@include bem-element(text) {
+		text-align: center;
+		padding: 10px;
+		color: $grey7;
+		line-height: 37px;
+		@include font-size(20);
+		
+		@include breakpoint(small) {
+			padding: 10px 40px;
+		}
+
+		@include breakpoint(medium) {
+			padding: 10px 80px;
+		}
+	}
+
+	@include bem-element(text, small) {
+		@include font-size(18);
+	}
+
+	@include bem-element(text, justify) {
+		text-align: justify;
+	}
+
+	@include bem-element(text, white) {
+		color: $white;
+	}
+
+	@include bem-element(infographic) {
+		width: 95%;
+		margin: 50px auto;
+		display: none;
+		
+		@include breakpoint(medium) {
+			display:block;
+		}
+	}
+
+	@include bem-element(image) {
+		text-align: center;
+		width: 200px;
+		@include border-radius(50%);
+	}
+
+	@include bem-element(image, bordered) {
+		border:5px solid $white;
+		@include prefix(box-shadow, 0px 5px 0 rgba(0,0,0,0.1));	
+	}
+	
+	@include bem-element(icon, blue) {
+		@include font-size(90);
+		margin: 45px auto;
+		color: $blue2;
+	}
+
+	@include bem-element(icon, red) {
+		@include font-size(120);
+		margin: 30px auto;
+		color: $red1;
+	}
+
+	@include bem-element(icon-border) {
+		margin: 50px auto;
+		border-radius: 50%;
+		text-align: center;
+		background-color: $white;
+		width: 180px;
+		height: 180px;
+	}
+}
+
+@include bem-block(section, green) {
+	background-color: $green3;
+}
+
+@include bem-block(section, grey) {
+	background-color: $lightgrey;
+}
+
+@include bem-block(section, small-padding) {
+	padding: 10px 0;
+}
+
+
+/* --------------------------------------------------
+   Containers
+-------------------------------------------------- */
+
+@include bem-block(container) {
+	padding: 20px;
+	text-align: center;
+	position: relative;
+	float: left;
+	width: 100%;
+
+	@include bem-element(header) {
+		color:$grey4;
+		@include font-size(22);
+	}
+
+	@include bem-element(header, number) {
+		color:$grey4;
+		@include font-size(70);
+		margin: 0;
+		padding: 0;
+	}
+
+	@include bem-element(header, small) {
+		@include font-size(20);
+	}
+
+	@include bem-element(header, large) {
+		@include font-size(28);
+	}
+
+	@include bem-element(header, white) {
+		color:$white;
+	}
+
+	@include bem-element(header, align-center-left) {
+		text-align: center;
+		
+		@include breakpoint(small-medium) {
+			text-align: left;
+		}
+	}
+
+	@include bem-element(header, align-left) {
+		text-align: left;
+	}
+
+	@include bem-element(header, align-center-left) {
+		text-align: center;
+		
+		@include breakpoint(small-medium) {
+			text-align: left;
+		}
+	}
+
+	@include bem-element(text) {
+		color: $grey7;
+		text-align: justify;
+		@include font-size(18);
+		line-height: 25px;
+		
+		@include breakpoint(small-medium) {
+			text-align: center;
+		}
+	}
+
+	@include bem-element(text, small) {
+		@include font-size(14);
+	}
+
+	@include bem-element(text, no-margin) {
+		margin: 0;
+	}
+
+	@include bem-element(text, white) {
+		color: $white;
+	}
+
+	@include bem-element(text, justify) {
+		text-align: justify;
+	}
+
+	@include bem-element(text, align-left) {
+		text-align: justify; 
+		
+		@include breakpoint(small) {
+			text-align: left;
+		}
+	}
+
+	@include bem-element(text, top-margin) {
+		margin-top: 0px;
+		
+		@include breakpoint(small-medium) {
+			margin-top: 50px;
+		}
+	}
+
+	@include bem-element(text, align-center-left) {
+		text-align: center;
+		
+		@include breakpoint(small-medium) {
+			text-align: left;
+		}
+	}
+
+	@include bem-element(icon-border) {
+		margin: 0 auto;
+		border: solid $grey4 2px;
+		border-radius: 50%;
+		text-align: center;
+		width: 150px;
+		height: 150px;
+		background-color: transparent;
+	}
+
+	@include bem-element(icon-border, small) {
+		width: 100px;
+		height: 100px;
+	}
+
+	@include bem-element(icon-border, medium) {
+		width: 130px;
+		height: 130px;
+	}
+
+	@include bem-element(icon-border, white) {
+		border: none;
+		background-color: $white;
+	}
+
+	@include bem-element(icon-border, blue) {
+		border: none;
+		background-color: $blue1;
+	}
+
+	@include bem-element(icon-border, yellow) {
+		border: none;
+		background-color: $yellow1;
+	}
+
+	@include bem-element(icon-border, red) {
+		border: none;
+		background-color: $red1;
+	}
+
+	@include bem-element(icon-border, green) {
+		border: none;
+		background-color: $green2;
+	}
+
+	@include bem-element(icon) {
+		margin:10px 0 ;
+		@include font-size(60);
+		color: $grey5;
+	}
+
+	@include bem-element(icon, small) {
+		@include font-size(40);
+		margin: 0;
+	}
+
+	@include bem-element(icon, medium) {
+		@include font-size(80);
+		margin: 25px 0;
+	}
+
+	@include bem-element(icon, large) {
+		@include font-size(100);
+		margin: 30px 0;
+		
+		@include breakpoint(small) {
+			margin: 60px 0;
+		}
+	}
+
+	@include bem-element(icon, float-left) {
+		float: left;
+	}
+
+	@include bem-element(icon, white) {
+		color: $white;
+	}
+
+	@include bem-element(icon, red) {
+		color: $red1;
+	}
+
+	@include bem-element(icon, yellow) {
+		color: $yellow1;
+	}
+
+	@include bem-element(icon, blue) {
+		color: $blue2;
+	}
+
+	@include bem-element(icon, green) {
+		color: $green4;
+		margin-top: 20px;
+	}
+
+	@include bem-element(icon, number) {
+		line-height: 85px ;	
+	}
+
+	@include bem-element(iphone) {
+		position: relative;
+		width: 200px;
+		
+		@include breakpoint(medium) {
+			position: absolute;
+			top: 60px;
+			left: 80px;
+			z-index: 3;
+		}
+
+		@include breakpoint(medium-large) {
+			top: -40px;
+			width: 230px;
+		}
+	}
+
+	@include bem-element(samsung) {
+		display:none;
+		
+		@include breakpoint(medium) {
+			display: block;
+			position: absolute;
+			top: 100px;
+			left: 220px;
+			width: 150px;
+			z-index: 2;
+		}
+		
+		@include breakpoint(medium-large) {
+			width: 180px;
+			top: 20px;
+			left: 260px;
+		}
+	}
+
+	@include bem-element(image) {
+		margin: 20px auto;
+		width: 190px;
+		height: 190px;
+		@include border-radius(50%);	
+	}
+
+	@include bem-element(image, small) {
+		margin: 20px auto;
+		margin-top: 40px;
+		width: 130px;
+		height: 130px;
+		@include border-radius(50%);	
+	}
+
+	@include bem-element(image, bordered) {
+		border:5px solid $green3;
+		@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));	
+	}
+}
+
+@include bem-block(container, small-padding) {
+	padding: 5px 20px;
+}
+
+@include bem-block(container, wide-padding) {
+	padding: 20px 100px;
+}
+
+@include bem-block(container, third) {
+	width: 100%;
+	
+	@include breakpoint(small-medium) {
+		width: 33.333333%;
+	}
+}
+
+@include bem-block(container, third-small) {
+	width: 100%;
+	
+	@include breakpoint(small-medium) {
+		width: 33.33333%;
+	}
+}
+
+@include bem-block(container, two-third) {
+	width: 100%;
+	
+	@include breakpoint(small-medium) {
+		width: 66.666666666%;
+	}
+}
+
+@include bem-block(container, two-third-small) {
+	width: 100%;
+	
+	@include breakpoint(small-medium) {
+		width: 66.666666666%;
+	}
+}
+
+@include bem-block(container, long-third) {
+	width: 100%;
+	
+	@include breakpoint(medium) {
+		width: 33.33333%;
+	}
+}
+
+@include bem-block(container, half) {
+	width: 100%;
+	
+	@include breakpoint(small-medium) {
+		width: 50%;
+	}
+}
+
+@include bem-block(container, long-half) {
+	width: 100%;
+	
+	@include breakpoint(medium) {
+		width: 50%;
+	}
+}
+
+@include bem-block(container, center-text) {
+	text-align: center;
+}
+
+@include bem-block(container, center-left-text) {
+	text-align: center;
+	
+	@include breakpoint(small-medium) {
+		text-align: left;
+	}
+}
+
+@include bem-block(container, breakpoint-sm-show) {
+	display: block;
+	
+	@include breakpoint(medium) {
+		display: none;
+	}
+
+}
+
+@include bem-block(container, breakpoint-sm-hide) {
+	display: none;
+	
+	@include breakpoint(medium) {
+		display: block;
+	}
+
+}
+
+
+/* --------------------------------------------------
+   Slider
+-------------------------------------------------- */
+	    
+@include bem-block(slider) {
+	width: 100%;
+	margin: 40px 0;
+	
+	@include bem-element(image) {
+		width: 20%;
+		margin: 0 6.666667%;
+		float: left;
+		opacity: 1;
+		position: relative;
+		
+		@include breakpoint(medium) {
+			width: 10%;
+			margin: 0 11.66666%;
+		}
+	}
+	
+}
