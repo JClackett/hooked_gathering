@@ -22,12 +22,12 @@
 $(document).on('ready page:load', function () {
     $(".topbar__menu").click(function(e) {
         $(".nav").toggle();
-        if ($(".topbar__menu").hasClass("fa-bars")) {
-            $(".topbar__menu").removeClass("fa-bars");
-            $(".topbar__menu").addClass("fa-close");
+        if ($(".topbar__menu").hasClass("fa-hand-peace-o")) {
+            $(".topbar__menu").removeClass("fa-hand-peace-o");
+            $(".topbar__menu").addClass("fa-hand-scissors-o");
          } else {
-            $(".topbar__menu").addClass("fa-bars");
-            $(".topbar__menu").removeClass("fa-close");
+            $(".topbar__menu").addClass("fa-hand-peace-o");
+            $(".topbar__menu").removeClass("fa-hand-scissors-o");
          }
         e.stopPropagation();
     });
@@ -35,8 +35,8 @@ $(document).on('ready page:load', function () {
     $(document).click(function(e) {
         if (!$(e.target).is('.nav, .nav*')) {
             $(".nav").hide();
-            $(".topbar__menu").addClass("fa-bars");
-            $(".topbar__menu").removeClass("fa-close");
+            $(".topbar__menu").addClass("fa-hand-peace-o");
+            $(".topbar__menu").removeClass("fa-hand-scissors-o");
         }
     });
 });
@@ -67,6 +67,12 @@ $(document).on('ready page:load', function () {
       $(".info-link").click(function() {
         $('html,body').animate({
             scrollTop: $("#info").offset().top},
+            2000,'easeOutQuart')
+        });
+
+      $(".ticket-link").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#tickets").offset().top},
             2000,'easeOutQuart')
         });
 });

@@ -1,4 +1,5 @@
-<!-- CONTENT -->
+<%= render 'topbar' %>
+
 <%= render 'cover' %>
 
 
@@ -6,93 +7,102 @@
 
 
 
-	<!-- SECTION 1 -->
+	<!-- News -->
 
 
-	<div class="section" id="mission">
-
-		<div class="content-wrapper">
-
-			<h2 class="section__header section__header--black">We get it.</h2>
-
-			<p class="section__text">Tracking every activity of your lifestyle and measuring its impact is not exactly a piece of cake!</p>
-
-		</div>
-	</div>
-
-
-
-	<!-- SECTION 2 -->
-
-	
-	<div class="section section--green" id="problem">
+	<div class="section" id="news">
 
 		<div class="content-wrapper">
 
-			<h2 class="section__header section__header--white">Have you ever ...</h2>
-
-			<div class="container container--third">
-
-				<i class="container__icon container__icon--white fa fa-shopping-cart"></i>
-
-				<p class="container__text container__text--white"> 
-					Felt greenwashed or misled by the brands that put all these sustainability claims, buzzwords and labels on their products?
-				</p>
-
-			</div>
-
-			<div class="container container--third ">
-
-				<i class="container__icon container__icon--white fa fa-euro"></i>
-				
-				<p class="container__text container__text--white"> 
-					Endured the pressure of high, recurring energy bills and wondered how much money you could actually save through just smart energy use habits?
-				</p>
-
-			</div>
-
-			<div class="container container--third ">
-
-				<i class="container__icon container__icon--white fa fa-leaf"></i>
-				
-				<p class="container__text container__text--white"> 
-					Wondered what the most effective way to reduce your lifestyle's negative social and environmental impact is?
-				</p>
-
-			</div>
-
-		</div>
-	</div>
-
-	
-
-	<!-- SECTION 3 -->
-
-	<div class="section" id="solution">
-
-		<div class="content-wrapper">
-
-				
-		</div>
-
-	</div>
-	
-
-
-	<!-- SECTION 4 -->
-
-	<div class="section section--grey" id="news">
-
-		<div class="content-wrapper">
-
+			<h2 class="section__header">News</h2>
 			
-		</div>
+			<div class="container">
+				<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F320054308131482&amp;width=600&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=435" scrolling="yes" style="border:none; overflow:hidden; width:600px; height:430px; background: white; float:left; " allowtransparency="true" frameborder="0"></iframe>
+			</div>
 
+			<div class="container">
+				<%= render :partial => "instagram_images", :collection => @instagram_images %>
+				<h3 class="container__header container__header container__header--font"><a href="https://www.instagram.com/hookedgathering/" style="color:black;">See more!</a></h3>
+				
+			</div>
+
+
+		</div>
 	</div>
 
 
 
-	<!-- SECTION 5 -->
+	<!-- Lineup -->
+
+	
+	<div class="section section--black" id="lineup">
+
+		<div class="content-wrapper">
+
+			<h2 class="section__header section__header--white">The Line-up</h2>
+
+			<%= render @guests %>	
+
+			<div class="container">
+				<h3 class="container__header container__header--white container__header--font">
+					<%= link_to 'See More!', guests_path %>
+				</h3>
+			</div>
+
+		</div>
+	</div>	
+	
+
+	<!-- Info -->
+
+
+	<div class="section" id="info">
+
+		<div class="content-wrapper">
+
+			<div class="section__header">Get in touch</div>
+
+			<div class="container container--half">
+
+				<img class="container__image" src="">
+
+			</div>
+
+			<div class="container container--half">
+
+				<p class="container__text"></p>
+
+
+			</div>
+				
+		</div>
+
+	</div>
+
+	<!-- Tickets -->
+
+	<div class="section" id="tickets">
+
+		<div class="content-wrapper">
+
+			<iframe
+				width="100%"
+				scrolling="auto"
+				height="1500"
+				frameborder="0"
+				marginwidth="0"
+				marginheight="0"
+				src="https://frontoffice.paylogic.nl/flows/MTAuMTAwLjIuNjYsNTQsZDQ4YWRlYWQyMDRiNDMyOTlmOGU2ZDBjOTM0ZjIwNDMsYTMxNjE0MDE2YzhiOTYyNDI3MTA0OWZiMTQ1YzRkZjM/Tickets/"
+				name="paylogicFO"
+				id="myFO">
+			</iframe>
+
+				
+		</div>
+
+	</div>
+
+	<!-- Sponsers -->
 
 	<div class="slider">
 						
@@ -113,79 +123,6 @@
 		
 		</div>
 	
-	</div>
-	
-	
-
-	<!-- SECTION 6 -->
-	
-	<div class="section section--green">
-		<div class="content-wrapper">
-			<h2 class="section__header section__header--white">Get Involved!</h2>
-
-			<div class="container container--third">
-				
-				<h3 class="container__header container__header--white">Be an early adopter</h3>
-				
-				<i class="container__icon container__icon--white fa fa-tasks"></i>
-
-				<p class="container__text container__text--white"> 
-					Beta test the app for us. Tell us what's good about it, what we can do better... send us an email and be a part of it.
-				</p>
-
-			</div>
-
-			<div class="container container--third ">
-				
-				<h3 class="container__header container__header--white">Spread the word around</h3>
-
-				<i class="container__icon container__icon--white fa fa-share-alt"></i>
-				
-				<p class="container__text container__text--white"> 
-					Write about us in your blogs, facebook feeds or tweet about us.
-				</p>
-
-			</div>
-
-			<div class="container container--third ">
-				
-				<h3 class="container__header container__header--white">Join us</h3>
-				
-				<i class="container__icon container__icon--white fa fa-users"></i>
-				
-				<p class="container__text container__text--white"> 
-					If you think you have the skills to contribute to this project, reach out to us... let's grab a beer!
-				</p>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- SECTION 7 -->
-
-
-	<div class="section">
-
-		<div class="content-wrapper">
-
-			<div class="section__header">Want to know how it all got started?</div>
-
-			<div class="container container--half">
-
-				<img class="container__image" src="">
-
-			</div>
-
-			<div class="container container--half">
-
-				<p class="container__text container__text--align-center-left container__text--top-margin">Is 100% natural juice actually natural?<br><br> Read more about this lovely Dutch lady's dilemma and the origins of GreenerU.<br></p>
-
-				<a class="button button--pull-left" href="how-it-started.html">Read more!</a>
-
-			</div>
-				
-		</div>
-
 	</div>
 
 </div>

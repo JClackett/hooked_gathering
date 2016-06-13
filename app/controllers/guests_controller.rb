@@ -1,4 +1,5 @@
 class GuestsController < ApplicationController
+  before_action :authenticate_user!, except: :index
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
   # GET /guests
@@ -28,7 +29,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to @guest, notice: 'Guest was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Guest was successfully created.' }
         format.json { render :show, status: :created, location: @guest }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to @guest, notice: 'Guest was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Guest was successfully updated.' }
         format.json { render :show, status: :ok, location: @guest }
       else
         format.html { render :edit }

@@ -3,14 +3,14 @@
 -------------------------------------------------- */
 @include bem-block(topbar) {
 	width: 100%;
-	background: $black;
+	background: $white;
 	z-index: 5;
 	font-family: 'Permanent Marker', cursive;
 	position: fixed;
 	top: 0;
 	text-align: center;
 	height: 60px;
-	color:$white;
+	color:$black;
 	@extend .group;
 	
 	@include bem-element(menu) {
@@ -32,10 +32,10 @@
 	text-align:center;
 	display:none;
 	float: none;
-	margin-right: 0;
 
 	@include breakpoint(small-medium) {
 		display:block !important;
+		float: left;
 	}
 
 	@include bem-element(listItem) {
@@ -52,16 +52,19 @@
 		
 		@include bem-element(link) {
 			color:$black;
-			margin: 0 10px;
-			padding:0px 10px;
 			cursor:pointer;
 			position: relative;
+			margin: 0;
+			padding: 5px 0;
+			margin: 5px 0;
 			font-weight: 400;
 			@include font-size(25);
-			letter-spacing: 1px;
 			
 			@include breakpoint(small-medium) {
-				color:$white;
+				color:$black;
+				padding:0px 5px;
+				margin: 0px 5px;
+				
 			}
 			
 		}
@@ -70,5 +73,14 @@
 			color:$yellow1;
 		}
 		
+	}
+
+}
+
+@include bem-block(nav, right ) {
+	float: none;
+	
+	@include breakpoint(small-medium) {
+		float: right;
 	}
 }
