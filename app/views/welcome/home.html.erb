@@ -1,109 +1,86 @@
 <%= render 'topbar' %>
 
+<%= render 'shared/flash_messages' %>
+
 <%= render 'cover' %>
 
 
-<div class="content">
+<!-- News -->
 
 
+<div class="section" id="news">
 
-	<!-- News -->
+	<div class="content-wrapper">
+
+		<h2 class="section__header">News</h2>
+		
+		<div class="container container--half container--no-float">
+			<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F763020623758888&amp;width=650&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=450" scrolling="yes" style="height:450px;  " class="container__iframe" allowtransparency="true" frameborder="0"></iframe>
+		</div>
+
+		<div class="container container--half container--no-float">
+			<!-- LightWidget WIDGET -->
+			<iframe src="//lightwidget.com/widgets/fc63625f85a7def14f4371e98b031170a1938c94.html" id="lightwidget_fc63625f85" name="lightwidget_fc63625f85"  scrolling="no" allowtransparency="true" class="lightwidget-widget container__iframe"></iframe>
+		</div>
+
+		<div class="container container--half container--no-float">
+			<iframe src="http://www.youtube.com/embed/?listType=user_uploads&amp;list=amsterdamconnection" width="480" height="400" class="container__iframe"></iframe>              
+		</div>
+
+	</div>
+</div>
 
 
-	<div class="section" id="news">
+<!-- Lineup -->
 
-		<div class="content-wrapper">
 
-			<h2 class="section__header">News</h2>
+<div class="section section--black" id="lineup">
+
+	<div class="content-wrapper">
+
+		<h2 class="section__header section__header--white">The Line-up</h2>
+
+		<%= render @guests %>	
+
+		<div class="container">
+			<h3 class="container__header container__header--white container__header--font">
+				<%= link_to 'See More!', guests_path %>
+			</h3>
+		</div>
+
+	</div>
+</div>	
+
+
+<!-- Info -->
+
+
+<div class="section" id="info">
+
+	<div class="content-wrapper">
+
+		<div class="section__header">Get in touch</div>
+
+		<div class="container container--half">
+
+			<img class="container__image" src="">
+
+		</div>
+
+		<div class="container container--half">
+
+			<p class="container__text"></p>
+
+
+		</div>
 			
-			<div class="container">
-				<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F320054308131482&amp;width=600&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=435" scrolling="yes" style="border:none; overflow:hidden; width:600px; height:430px; background: white; float:left; " allowtransparency="true" frameborder="0"></iframe>
-			</div>
-
-			<div class="container">
-				<%= render :partial => "instagram_images", :collection => @instagram_images %>
-				<h3 class="container__header container__header container__header--font"><a href="https://www.instagram.com/hookedgathering/" style="color:black;">See more!</a></h3>
-				
-			</div>
-
-
-		</div>
 	</div>
 
+</div>
 
+<!-- Sponsers -->
 
-	<!-- Lineup -->
-
-	
-	<div class="section section--black" id="lineup">
-
-		<div class="content-wrapper">
-
-			<h2 class="section__header section__header--white">The Line-up</h2>
-
-			<%= render @guests %>	
-
-			<div class="container">
-				<h3 class="container__header container__header--white container__header--font">
-					<%= link_to 'See More!', guests_path %>
-				</h3>
-			</div>
-
-		</div>
-	</div>	
-	
-
-	<!-- Info -->
-
-
-	<div class="section" id="info">
-
-		<div class="content-wrapper">
-
-			<div class="section__header">Get in touch</div>
-
-			<div class="container container--half">
-
-				<img class="container__image" src="">
-
-			</div>
-
-			<div class="container container--half">
-
-				<p class="container__text"></p>
-
-
-			</div>
-				
-		</div>
-
-	</div>
-
-	<!-- Tickets -->
-
-	<div class="section" id="tickets">
-
-		<div class="content-wrapper">
-
-			<iframe
-				width="100%"
-				scrolling="auto"
-				height="1500"
-				frameborder="0"
-				marginwidth="0"
-				marginheight="0"
-				src="https://frontoffice.paylogic.nl/flows/MTAuMTAwLjIuNjYsNTQsZDQ4YWRlYWQyMDRiNDMyOTlmOGU2ZDBjOTM0ZjIwNDMsYTMxNjE0MDE2YzhiOTYyNDI3MTA0OWZiMTQ1YzRkZjM/Tickets/"
-				name="paylogicFO"
-				id="myFO">
-			</iframe>
-
-				
-		</div>
-
-	</div>
-
-	<!-- Sponsers -->
-
+<div class="section">
 	<div class="slider">
 						
 		<div class="slider__element">
@@ -113,17 +90,15 @@
 			<%= image_tag("gmeente.png", class: "slider__image") %>
 		
 		</div>
-
+	
 		<div class="slider__element">
 		
 			<%= image_tag("kozen.png", class: "slider__image") %>
 			<%= image_tag("invincible.png", class: "slider__image") %>
 			<%= image_tag("shutup&trick.png", class: "slider__image") %>
-
+	
 		
 		</div>
 	
 	</div>
-
 </div>
-

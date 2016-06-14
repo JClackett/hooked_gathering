@@ -10,7 +10,7 @@
 	</ul>
 
 	<ul class="nav nav--right">
-		<li class="nav__listItem"><p class="nav__link ticket-link">get your ticket!</p></li>
+		<li class="nav__listItem"><%= link_to 'get your tickets!', tickets_path, class: 'nav__link' %></li>
 	</ul>
 
 	<% if user_signed_in? %>

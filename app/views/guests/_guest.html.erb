@@ -1,0 +1,11 @@
+<div class="container container--half">
+	<%= image_tag("hooked-logo.png", class: 'container__image') %>
+	<h3 class="container__header container__header--white container__header--font"><%= guest.name %></h3>
+	<div class="container__text container__text--white"><%= guest.bio %></div>
+	<% if user_signed_in? %>
+		<div class="container__button-wrapper">
+			<%= link_to 'Edit', edit_guest_path(guest), class: 'container__button container__button--white' %>
+			<%= link_to 'Destroy', guest, method: :delete,class: 'container__button container__button--white' , data: { confirm: 'Are you sure?' } %>	
+		</div>
+	<% end %>
+</div>

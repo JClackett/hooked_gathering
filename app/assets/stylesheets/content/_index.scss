@@ -1,16 +1,8 @@
-/* --------------------------------------------------
-Content
--------------------------------------------------- */
-.content {
-	background-color: $white;
-}
-
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------
    Section
 ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 @include bem-block(section) {
-	background-color: $white;
 	padding: 60px 0;
 	text-align: center;
 	@extend .group;
@@ -25,74 +17,22 @@ Content
 			@include font-size(80);
 		}
 	}
+
 	@include bem-element(header, white) {
 		color: $white;
 	}
 
-
-	@include bem-element(text) {
-		text-align: center;
-		padding: 10px;
-		color: $grey7;
-		line-height: 37px;
-		@include font-size(20);
-		
-		@include breakpoint(small) {
-			padding: 10px 40px;
-		}
-
-		@include breakpoint(medium) {
-			padding: 10px 80px;
-		}
-	}
-
-	@include bem-element(text, small) {
-		@include font-size(18);
-	}
-
-	@include bem-element(text, justify) {
-		text-align: justify;
-	}
-
-	@include bem-element(text, white) {
-		color: $white;
-	}
-
-	@include bem-element(image) {
-		text-align: center;
-		width: 200px;
-		@include border-radius(50%);
-	}
-
-	@include bem-element(image, bordered) {
-		border:5px solid $white;
-		@include prefix(box-shadow, 0px 5px 0 rgba(0,0,0,0.1));	
-	}
-	
-	@include bem-element(icon, blue) {
-		@include font-size(90);
-		margin: 45px auto;
-		color: $blue2;
-	}
-
-	@include bem-element(icon, red) {
-		@include font-size(120);
-		margin: 30px auto;
-		color: $red1;
-	}
-
-	@include bem-element(icon-border) {
-		margin: 50px auto;
-		border-radius: 50%;
-		text-align: center;
-		background-color: $white;
-		width: 180px;
-		height: 180px;
+	@include bem-element(header, n-mt) {
+		margin-top: 0;
 	}
 }
 
 @include bem-block(section, black) {
 	background-color: $black;
+}
+
+@include bem-block(section, no-padding) {
+	padding: 0;
 }
 
 
@@ -104,7 +44,9 @@ Content
 @include bem-block(container) {
 	padding: 20px;
 	text-align: center;
+	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
 	float: left;
 	width: 100%;
 
@@ -131,6 +73,11 @@ Content
 		color: $white;
 	}
 
+	@include bem-element(iframe) {
+		width: 100%;
+		border:none;
+	}
+	
 	@include bem-element(image) {
 		width: 60%;
 	}
@@ -158,21 +105,23 @@ Content
 		}
 	}
 }
-
+@include bem-block(container, no-float) {
+	float:none;
+}
 
 @include bem-block(container, half) {
 	width: 100%;
 	
-	@include breakpoint(small-medium) {
+	@include breakpoint(medium) {
 		width: 50%;
 	}
 }
 
 
 
-/* --------------------------------------------------
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
    Slider
--------------------------------------------------- */
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
 	    
 @include bem-block(slider) {
 	width: 100%;
@@ -191,4 +140,28 @@ Content
 		}
 	}
 	
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------
+   Tickets
+------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+@include bem-block(section) {
+
+	@include bem-element(page-header) {
+		font-family: 'Permanent Marker', cursive;
+		@include font-size(40);
+		color: $white;
+		font-weight:800;
+		float: left;
+		margin-top: 5px;
+	}
+
+	@include bem-element(tickets-icon) {
+		font-size: 30px;
+		margin: 20px;
+		color: $white;
+		float: left;
+	}
 }
