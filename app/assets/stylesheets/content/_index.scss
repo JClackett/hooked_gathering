@@ -65,8 +65,9 @@
 
 	@include bem-element(text) {
 		color: $black;
-		@include font-size(18);
-		line-height: 25px;
+		@include font-size(14);
+		line-height: 22px;
+		text-align: justify;
 	}
 
 	@include bem-element(text, white) {
@@ -76,10 +77,19 @@
 	@include bem-element(iframe) {
 		width: 100%;
 		border:none;
+		height: 300px;
+		
+		@include breakpoint(small) {
+			height: 400px;
+		}
+
+		@include breakpoint(medium) {
+			height: 500px;
+		}
 	}
 	
 	@include bem-element(image) {
-		width: 60%;
+		width: 80%;
 	}
 
 	@include bem-element(image, small) {
@@ -114,6 +124,17 @@
 	
 	@include breakpoint(medium) {
 		width: 50%;
+	}
+}
+
+@include bem-block(container, third) {
+	width: 100%;
+	
+	@include breakpoint(small) {
+		width: 50%;
+	}
+	@include breakpoint(medium) {
+		width: 33%;
 	}
 }
 
