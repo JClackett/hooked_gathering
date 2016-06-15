@@ -1,9 +1,55 @@
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------
-Flash Messages
------------------------------------------------------------------------------------------------------------------------------------------------------- */
-	    
+.flash-messages-home {
+	padding: 0;
+	@extend .group;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 100;
+	
+	.flash-notice {
+		background-color: #d9edf7;
+		color: #31708f;
+		border: 1px solid #bce8f1;
+	}
+
+	.flash-alert {
+		color: #A94442;;
+		background-color: #f2dede;
+		border: 1px solid #ebccd1;
+	}
+
+	.flash-success {
+		color: #3c763d;
+		background-color: #dff0d8;
+		border: 1px solid #d6e9c6;
+	}	
+}
+
 .flash-messages-devise {
 	margin-bottom: 15px;
+	
+	.flash-notice {
+		background-color: #d9edf7;
+		color: #31708f;
+		border: 1px solid #bce8f1;
+		float: right;
+	}
+
+	.flash-alert {
+		color: #A94442;;
+		background-color: #f2dede;
+		border: 1px solid #ebccd1;
+		float: right;
+	}
+
+	.flash-success {
+		float: right;
+		color: #3c763d;
+		background-color: #dff0d8;
+		border: 1px solid #d6e9c6;
+	}	
 }
 
 .flash {
@@ -18,17 +64,8 @@ Flash Messages
 		list-style: none;
 		float: right;
 	}
-
-	&:last-child {
-		margin-bottom: 0;
+		&:last-child {
+			margin-bottom: 0;
 	}
 }
 
-.flash-notice,.flash-alert,.flash-success  {
-	position: absolute;
-	top:60px;
-	background-color: #d9edf7;
-	color: #31708f;
-	border: 1px solid #bce8f1;
-	z-index: 2;
-}

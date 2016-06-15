@@ -1,5 +1,5 @@
 <div class="container container--half">
-	<%= image_tag("hooked-logo.png", class: 'container__image') %>
+	<%= image_tag(guest.picture.url(:square), class: "container__image") %>
 	<h3 class="container__header container__header--white container__header--font"><%= guest.name %></h3>
 	<div class="container__text container__text--white"><%= guest.bio %></div>
 	<% if user_signed_in? %>

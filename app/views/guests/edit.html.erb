@@ -1,6 +1,13 @@
-<h1>Editing Guest</h1>
+<%= provide(:title, "Edit Guest" ) %>
 
-<%= render 'form', guest: @guest %>
+<div class="outer-form">
+	<h2>editing guest</h2>
 
-<%= link_to 'Show', @guest %> |
-<%= link_to 'Back', guests_path %>
+	<%= render 'form', guest: @guest %>
+	
+	<div class="form-links">
+		<ul>
+			<li><%= link_to 'back', root_path %></li>
+		</ul>
+	</div>
+</div>

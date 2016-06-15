@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 	end
 	
-	resources :guests
+	resources :guests, except: :show
 
 	get 'tickets', to: 'welcome#tickets'
 
