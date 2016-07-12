@@ -33,9 +33,8 @@ Form Layout Template
 		background-clip: padding-box;
 		border: 1px solid #CCC;
 		padding: 10px;
-		font-size: 14px;
 		resize: none;
-		font-size: 1.4rem;
+		@include font-size(14);
 		width: 100%;
 		color:$grey6;
 	}
@@ -51,7 +50,21 @@ Form Layout Template
 			margin: 10px 0;
 			color:$grey5;
 		}
+
+		.form-label {
+			@include font-size(14);
+			color: $grey8;
+		}
 	
+	}
+
+	.file-field {
+		background-color: #FAFAFA;
+		@include border-radius(4px);
+		background-clip: padding-box;
+		border: 1px solid #CCC;
+		padding: 10px;
+		padding-bottom: 0;
 	}
 
 	.actions {

@@ -18,7 +18,8 @@
 		<%= f.text_area :bio,  rows: 3, placeholder: "Guest's Bio", class: 'input' %>
 	</div>
 
-	<div class="field">
+	<div class="field file-field">
+    		<%= f.label :picture, "PIcture", class: 'form-label' %>
 		<%= f.file_field :picture %>
 	</div>
 
