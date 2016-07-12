@@ -2,8 +2,6 @@
 
 	<% if guest.errors.any? %>
 		<div id="error_explanation" class="error-form">
-			<h2><%= pluralize(guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
-
 			<ul>
 			<% guest.errors.full_messages.each do |message| %>
 			  <li><%= message %></li>
