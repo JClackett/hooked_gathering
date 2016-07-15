@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="field">
-			<%= f.password_field :current_password, placeholder: 'Current Password (we need your current password to confirm your changes)' , class: 'input' , autocomplete: "off" %>
+			<%= f.password_field :current_password, placeholder: 'Current Password (we need this to confirm your changes)' , class: 'input' , autocomplete: "off" %>
 		</div>
 
 		<div class="actions">
@@ -32,11 +32,14 @@
 		</div>
 	<% end %>
 
-	<h2>unhappy?</h2>
+	<h3>unhappy?</h3>
 	
 	<div class="actions">
 		<%= button_to "Cancel my account", registration_path(resource_name), class: 'button button--red', data: { confirm: "Are you sure?" }, method: :delete %>
 	</div>
+
+	<%= render "devise/shared/links" %>
+
 
 </div>
 
