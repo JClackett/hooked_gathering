@@ -2,13 +2,12 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
-gem 'httparty'
-
 gem "figaro"
 
 gem "paperclip", "~> 5.0.0"
 
 gem 'aws-sdk', '>= 2.0.34'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
