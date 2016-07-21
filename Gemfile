@@ -8,6 +8,7 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'aws-sdk', '>= 2.0.34'
 
+gem 'shopr'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
