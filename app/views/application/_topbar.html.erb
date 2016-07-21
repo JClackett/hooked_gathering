@@ -11,12 +11,17 @@
 
 	<ul class="nav nav--right">
 		<li class="nav__listItem"><%= link_to 'get your tickets!', tickets_path, class: 'nav__link' %></li>
+		<% if current_order %>
+			<li class="nav__listItem">
+				<p>
+				  You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
+				  <%= number_to_currency current_order.total_before_tax %>.
+				</p>
+			</li>
+		<% end %>
+		<%= link_to "View basket", basket_path %>
 	</ul>
 
-	<% if user_signed_in? %>
-		<ul class="nav">
-			<li class="nav__listItem"><%= link_to('logout', destroy_user_session_path, class: 'nav__link', :method => :delete) %> </li>
-		</ul>
-	<% end %>
+
 
 </div>

@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20160615133753) do
 
-  create_table "guests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "guests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
     t.text     "bio",                  limit: 65535
     t.datetime "created_at",                         null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.datetime "picture_updated_at"
   end
 
-  create_table "nifty_key_value_store", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "nifty_key_value_store", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "parent_id"
     t.string   "parent_type"
     t.string   "group"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "shopr_addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "customer_id"
     t.string   "address_type"
     t.boolean  "default"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["customer_id"], name: "index_shopr_addresses_on_customer_id", using: :btree
   end
 
-  create_table "shopr_attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "parent_id",   null: false
     t.string   "parent_type", null: false
     t.string   "token"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "shopr_countries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_countries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
     t.string   "code2"
     t.string   "code3"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.datetime "updated_at",                 null: false
   end
 
-  create_table "shopr_customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "company"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "shopr_delivery_service_prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_delivery_service_prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "delivery_service_id"
     t.string   "code"
     t.decimal  "price",                             precision: 8, scale: 2
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["price"], name: "index_shopr_delivery_service_prices_on_price", using: :btree
   end
 
-  create_table "shopr_delivery_services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_delivery_services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
     t.string   "code"
     t.boolean  "default",      default: false
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["active"], name: "index_shopr_delivery_services_on_active", using: :btree
   end
 
-  create_table "shopr_order_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_order_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "order_id"
     t.integer  "ordered_item_id"
     t.string   "ordered_item_type"
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["ordered_item_id", "ordered_item_type"], name: "index_shopr_order_items_ordered_item", using: :btree
   end
 
-  create_table "shopr_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "token"
     t.string   "first_name"
     t.string   "last_name"
@@ -177,7 +177,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["token"], name: "index_shopr_orders_on_token", using: :btree
   end
 
-  create_table "shopr_payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "order_id"
     t.decimal  "amount",            precision: 8, scale: 2, default: "0.0"
     t.string   "reference"
@@ -193,7 +193,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["parent_payment_id"], name: "index_shopr_payments_on_parent_payment_id", using: :btree
   end
 
-  create_table "shopr_product_attributes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_product_attributes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "product_id"
     t.string   "key"
     t.string   "value"
@@ -207,7 +207,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["product_id"], name: "index_shopr_product_attributes_on_product_id", using: :btree
   end
 
-  create_table "shopr_product_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_product_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
     t.string   "permalink"
     t.text     "description",                  limit: 65535
@@ -224,14 +224,14 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["rgt"], name: "index_shopr_product_categories_on_rgt", using: :btree
   end
 
-  create_table "shopr_product_categorizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_product_categorizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "product_id",          null: false
     t.integer "product_category_id", null: false
     t.index ["product_category_id"], name: "categorization_by_product_category_id", using: :btree
     t.index ["product_id"], name: "categorization_by_product_id", using: :btree
   end
 
-  create_table "shopr_products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "parent_id"
     t.string   "name"
     t.string   "sku"
@@ -254,14 +254,14 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["sku"], name: "index_shopr_products_on_sku", using: :btree
   end
 
-  create_table "shopr_settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "key"
     t.string "value"
     t.string "value_type"
     t.index ["key"], name: "index_shopr_settings_on_key", using: :btree
   end
 
-  create_table "shopr_stock_level_adjustments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_stock_level_adjustments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer  "item_id"
     t.string   "item_type"
     t.string   "description"
@@ -274,7 +274,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.index ["parent_id", "parent_type"], name: "index_shopr_stock_level_adjustments_parent", using: :btree
   end
 
-  create_table "shopr_tax_rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_tax_rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
     t.decimal  "rate",                       precision: 8, scale: 2
     t.text     "country_ids",  limit: 65535
@@ -283,7 +283,7 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.datetime "updated_at",                                         null: false
   end
 
-  create_table "shopr_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopr_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -300,6 +300,28 @@ ActiveRecord::Schema.define(version: 20160615133753) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_shopr_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_shopr_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end
